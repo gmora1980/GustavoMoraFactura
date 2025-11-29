@@ -242,6 +242,7 @@
             // 
             this.txtInteres.Location = new System.Drawing.Point(1033, 39);
             this.txtInteres.Name = "txtInteres";
+            this.txtInteres.ReadOnly = true;
             this.txtInteres.Size = new System.Drawing.Size(33, 26);
             this.txtInteres.TabIndex = 66;
             this.txtInteres.Text = "8,5";
@@ -268,8 +269,10 @@
             // 
             this.txtImpuesto.Location = new System.Drawing.Point(519, 77);
             this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.ReadOnly = true;
             this.txtImpuesto.Size = new System.Drawing.Size(127, 26);
             this.txtImpuesto.TabIndex = 63;
+            this.txtImpuesto.Text = "13";
             // 
             // lblImpuesto
             // 
@@ -285,8 +288,10 @@
             // 
             this.txtSeguro.Location = new System.Drawing.Point(750, 33);
             this.txtSeguro.Name = "txtSeguro";
+            this.txtSeguro.ReadOnly = true;
             this.txtSeguro.Size = new System.Drawing.Size(127, 26);
             this.txtSeguro.TabIndex = 61;
+            this.txtSeguro.Text = "50000";
             // 
             // lblSeguro
             // 
@@ -321,6 +326,7 @@
             // 
             this.txtCuota.Location = new System.Drawing.Point(581, 128);
             this.txtCuota.Name = "txtCuota";
+            this.txtCuota.ReadOnly = true;
             this.txtCuota.Size = new System.Drawing.Size(177, 26);
             this.txtCuota.TabIndex = 56;
             // 
@@ -335,6 +341,7 @@
             // 
             this.txtTotalFactura.Location = new System.Drawing.Point(195, 128);
             this.txtTotalFactura.Name = "txtTotalFactura";
+            this.txtTotalFactura.ReadOnly = true;
             this.txtTotalFactura.Size = new System.Drawing.Size(228, 26);
             this.txtTotalFactura.TabIndex = 53;
             // 
@@ -404,9 +411,9 @@
             // lsvContenido
             // 
             this.lsvContenido.HideSelection = false;
-            this.lsvContenido.Location = new System.Drawing.Point(1, 25);
+            this.lsvContenido.Location = new System.Drawing.Point(6, 14);
             this.lsvContenido.Name = "lsvContenido";
-            this.lsvContenido.Size = new System.Drawing.Size(1060, 90);
+            this.lsvContenido.Size = new System.Drawing.Size(1060, 162);
             this.lsvContenido.TabIndex = 2;
             this.lsvContenido.UseCompatibleStateImageBehavior = false;
             // 
@@ -481,7 +488,7 @@
             this.grbContenidoArchivos.Controls.Add(this.lsvContenido);
             this.grbContenidoArchivos.Location = new System.Drawing.Point(12, 418);
             this.grbContenidoArchivos.Name = "grbContenidoArchivos";
-            this.grbContenidoArchivos.Size = new System.Drawing.Size(1072, 128);
+            this.grbContenidoArchivos.Size = new System.Drawing.Size(1072, 182);
             this.grbContenidoArchivos.TabIndex = 59;
             this.grbContenidoArchivos.TabStop = false;
             this.grbContenidoArchivos.Text = "Contenido de Archivos";
@@ -491,7 +498,7 @@
             this.lblTotalRegistros.AutoSize = true;
             this.lblTotalRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalRegistros.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalRegistros.Location = new System.Drawing.Point(397, 567);
+            this.lblTotalRegistros.Location = new System.Drawing.Point(383, 603);
             this.lblTotalRegistros.Name = "lblTotalRegistros";
             this.lblTotalRegistros.Size = new System.Drawing.Size(156, 20);
             this.lblTotalRegistros.TabIndex = 60;
@@ -502,7 +509,7 @@
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.ForeColor = System.Drawing.Color.Black;
-            this.lblCantidad.Location = new System.Drawing.Point(584, 567);
+            this.lblCantidad.Location = new System.Drawing.Point(575, 603);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(29, 20);
             this.lblCantidad.TabIndex = 61;
