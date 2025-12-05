@@ -300,36 +300,39 @@ namespace GustavoMoraFactura
             {
                 string temporal = "temp.txt";
                 string linea;
-                StreamReader leerDetalle = new StreamReader(ruta + archivo);
-                StreamWriter escribirTemporal = new StreamWriter(ruta + temporal);
-                while (leerDetalle.Peek() != -1)
+
+                using (StreamReader leerDetalle = new StreamReader(ruta + archivo1))
+                using (StreamWriter escribirTemporal = new StreamWriter(Path.Combine(ruta, temporal)))
                 {
-                    linea = leerDetalle.ReadLine();
-                    if (string.IsNullOrEmpty(linea))
+                    while ((linea = leerDetalle.ReadLine()) != null)
                     {
-                        continue;
-                    }
-                    string[] datos = linea.Split(',');
-                    if (datos[0] != txtIdentificacion.Text)
-                    {
-                        escribirTemporal.WriteLine(linea);
+                        if (string.IsNullOrWhiteSpace(linea))
+                            continue;
+
+                        string[] datos = linea.Split('|');
+
+                        // Compara por Cedula / Identificación
+                        if (datos[2] != txtIdentificacion.Text)
+                        {
+                            escribirTemporal.WriteLine(linea);
+                        }
                     }
                 }
-                leerDetalle.Close();
-                escribirTemporal.Close();
-                File.Delete(ruta + archivo);
-                File.Move(ruta + temporal, ruta + archivo);
-                MessageBox.Show("Archivos eliminados correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                File.Delete(ruta + archivo1);
+                File.Move(Path.Combine(ruta, temporal), ruta + archivo1);
+
+                MessageBox.Show("Registro eliminado correctamente", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LeerDetalle();
                 Limpiar();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar los archivos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al eliminar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
         private void CalcularValores()
         {
